@@ -2,6 +2,7 @@
     "name": "demo3",
     "version": "7.2.6",
     "private": true,
+    "homepage": "https://cxm-enterprise.github.io/pga-web-test",
     "scripts": {
         "start": "react-scripts start -o",
         "build": "react-scripts build",
