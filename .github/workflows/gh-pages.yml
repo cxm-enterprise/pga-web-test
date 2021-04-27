@@ -20,7 +20,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: git config user.email "alain00.alvarez@gmail.com"
-    - run: git config user.name "Alain"
+    - run: git config user.name "Alain00"
     - run: npm i
     - run: npm run build --if-present
     - run: npm run deploy
