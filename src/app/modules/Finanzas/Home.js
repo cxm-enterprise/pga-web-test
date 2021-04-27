@@ -13,8 +13,6 @@ export default function Home() {
 
   const [showResumenFinanzasOrVentasGastos, setShowResumenFinanzasOrVentasGastos] = useState(false);
   const [showSelect2, setShowSelect2] = useState(false);
-  const [showSelect3, setShowSelect3] = useState(false);
-  const [showSelect4, setShowSelect4] = useState(false);
   const [showVista, setShowVista] = useState(true)
 
   const handleShow = () => {
@@ -24,15 +22,6 @@ export default function Home() {
   const handleShowSelect2= () => {
     setShowSelect2(!showSelect2);
   };
-
-  const handleShowSelect3 = () => {
-    setShowSelect3(!showSelect3);
-  };
-
-  const handleShowSelect4 = () => {
-    setShowSelect4(!showSelect4);
-  };
-
 
  const handleVistaLista = () => {
   setShowVista(false)
@@ -54,8 +43,6 @@ export default function Home() {
                   <Header 
                     showSelect1={showResumenFinanzasOrVentasGastos}
                     showSelect2={showSelect2}
-                    showSelect3={showSelect3} 
-                    showSelect4={showSelect4} 
                     handleVistaLista={handleVistaLista}
                     handleVistaCarta={handleVistaCarta}
                     />
@@ -73,8 +60,6 @@ export default function Home() {
                           (
                               <VentasGastos 
                                 handleShowSelect2={handleShowSelect2}
-                                handleShowSelect3={handleShowSelect3}
-                                handleShowSelect4={handleShowSelect4}
                                 showVista={showVista}
                               />
                           )
@@ -88,3 +73,4 @@ export default function Home() {
     </Card>
   );
 }
+

@@ -5,8 +5,6 @@ import ListaClientes from "../../Clientes/Lista";
 
 export default function VentasGastos({
   handleShowSelect2,
-  handleShowSelect3,
-  handleShowSelect4,
   showVista,
 }) {
     
@@ -39,10 +37,7 @@ export default function VentasGastos({
     </div>
   ) : (
     <div className="d-flex flex-column mt-5">
-      <ListaClientes 
-        handleShowSelect3={handleShowSelect3} 
-        handleShowSelect4={handleShowSelect4}          
-      />
+      <ListaClientes />
     </div>
   );
 }
