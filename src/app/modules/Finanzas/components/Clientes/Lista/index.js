@@ -2,15 +2,13 @@ import React, { Fragment, useState } from "react";
 import Cliente from "../../partials/CardCliente";
 import DetailCliente from "../Detail";
 
-export default function ListaClientes({handleShowSelect3, handleShowSelect4}) {
+export default function ListaClientes() {
   const [
     showListaClientesOrDetailCliente, setShowListaClientesOrDetailCliente
   ] = useState(false);
 
   const handleChangedShowListaCliente = () => {
     setShowListaClientesOrDetailCliente(!showListaClientesOrDetailCliente);
-    handleShowSelect3()
-    handleShowSelect4()
   };
 
 

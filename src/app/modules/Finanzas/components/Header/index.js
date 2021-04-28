@@ -14,8 +14,6 @@ import OrderBy from './partials/OrderBy'
 export default function Header({
   showSelect1,
   showSelect2,
-  showSelect3,
-  showSelect4,
   handleVistaLista,
   handleVistaCarta,
 }) {
@@ -37,7 +35,7 @@ export default function Header({
   };
   const {anchor} = setState
   return (
-    <div className="d-flex flex-row justify-content-between shadow w-100 h-25 px-3 py-2">
+    <div className="d-flex flex-row flex-wrap justify-content-between shadow w-100 h-25 px-3 py-2">
       <div className="d-block d-sm-block d-md-flex">
         <Fragment>
           <IconButton color="primary" onClick={toggleDrawer(anchor, true)} className="btn btn-outline-primary">
@@ -56,20 +54,43 @@ export default function Header({
             <Aside/>
           </Drawer>
         </Fragment>
-
-        {showSelect1 && <Anno /> } 
-        {showSelect2 &&  <Ventas />} 
-        {showSelect3 && <Clientes />} 
+        <div className="d-sm-block d-md-flex">
+            { showSelect1 && 
+              <div className="d-flex">
+                <Anno />  
+                <div className="d-none d-sm-none d-md-flex p-0">
+                  <IconButton>
+                    /
+                  </IconButton>
+                </div>
+             </div>
+            } 
+            { showSelect2 && 
+              <div className="d-flex">
+                <Ventas /> 
+                <div className="d-none d-sm-none d-md-flex">
+                  <IconButton>
+                    /
+                  </IconButton>
+                </div>
+              </div>
+            }
+             
+          <div>
+            {showSelect2 && <Clientes />}
+            </div> 
+        </div> 
       </div>
-      <div className="d-flex justify-content-center align-content-center">
-        <IconButton color="primary" onClick={handleVistaLista}>
-          <List titleAccess="Vista de Lista" fontSize="large" />
-        </IconButton>
-        <IconButton color="primary" onClick={handleVistaCarta}>
-          <Cart titleAccess="Vista de Carta" fontSize="large" />
-        </IconButton>
-        {showSelect4 && <OrderBy/>}
-      </div>
+      <div className="d-sm-block d-md-flex justify-content-center align-contentmd-sm-end align-contentmd-md-center ml-auto">
+          <IconButton color="primary" onClick={handleVistaLista}>
+            <List titleAccess="Vista de Lista" fontSize="large" />
+          </IconButton>
+          <IconButton color="primary" onClick={handleVistaCarta}>
+            <Cart titleAccess="Vista de Carta" fontSize="large" />
+          </IconButton>    
+          {showSelect2 && <OrderBy/>}    
+      </div>      
     </div>
   );
 }
+
